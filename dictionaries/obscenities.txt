@@ -165,6 +165,8 @@ kinbaku,100,
 kinkster,100,
 kinky,100,
 knobbing,100,
+load,10,*********
+handy,20,********
 lolita,100,
 lollita,100,
 lolitta,100,
@@ -251,6 +253,7 @@ shit,80,
 shitass,90,
 shitless,80,
 shitstain,80,
+nsfw,100,
 shota,100,
 shrimping,100,
 skeet,20,********
