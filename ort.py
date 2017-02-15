@@ -17,35 +17,26 @@ def loadDictionary(dictionary):
     content = ''
     with open('./dictionaries/' + dictionary + '.txt') as d:
         content = d.readlines()
-    return [ x.strip() for x in content ]
+    if dictionary == 'obscenities':
+        return dict( [(x.strip().split(',')[0], (x.strip().split(',')[1], x.strip().split(',')[1])) for x in content ])
+    else:
+        return dict([ tuple(x.strip().split(',')) for x in content ])
 
 
 obscenities = loadDictionary('obscenities')
 slogans = loadDictionary('slogans')
 amplifiers = loadDictionary('amplifiers')
-
+#slogans = dict(slogans)
 #Gets the slogan
 #@Param: tweet text
 #Return: tuple --> (slogan ranking, plus how many slogans there are)
 def sloganWeight(text):
-    print slogans
-    slogansWeights = [100 for slogan_ in slogans if slogan_ in text]
-    return (len(slogansWeights), sum(slogansWeights))
+    sloganWeights = []
+    for slogan in slogans:
+        if slogan in text:
+            sloganWeights.append((100, text.count(slogan)))
+    return map(sum, zip(*sloganWeights))
 
-#Gets the close matches of a word
-#@Param: word to be analyzed
-#@Return: a sequence of obscene words that re best matches
-def closeMatches(word):
-    return difflib.get_close_matches(word, list(map(lambda term: term[0], dictionary)), 5, .80)
-
-#Confirm the presence of an obscene word and returns tge true word
-#@Param: a word and a sequence of closest matching words as a tuple
-#@Return: list --> [the proper word if an obscenity is detected]
-def confirmObscene(entity):
-    word = entity[0]
-    return [term for term in entity[1] \
-            if round(difflib.SequenceMatcher(None, word.lower(), term).ratio(), 5) > .80000\
-            or word.find(term) != -1] #Terms that have a direct match or are present in the word
 
 
 #Performs the obscenity ranking
@@ -53,6 +44,10 @@ def confirmObscene(entity):
 #@Return: the ranking in obscenity of the text
 punctuation = ['.', '!', '?', ',', '\'', '\\']
 def rankText(text, slogans, amplifiers):
+    sWeights = 0
+    aWeights = 0
+    tWeights = 0
+
     tokens = re.sub('[^A-Za-z 0-9]+', '', text).split(' ')
     matches = [(token, closeMatches(token)) for token in tokens if closeMatches(token)]
     if len(matches) == 0:
@@ -72,5 +67,7 @@ def rankText(text, slogans, amplifiers):
 #print(rankText('Fuck trump man, nigga is gay af'))
 #print(rankText('Did you cum in me!? Fuck you did huh you know what FUCK YOU fuck you fuck you, you fucking asshole.'))
 #alaskan pipeline
+#d = dict([('sexy','')])
+#print('s' in d.itervalues())
 
-print sloganWeight('ass wipe black cock')
+print sloganWeight('ass wipe black cock black cock')
