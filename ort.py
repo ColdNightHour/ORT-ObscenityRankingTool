@@ -4,7 +4,7 @@
 import re
 import math
 import collections
-
+import os
 #Loads the obscenity dictionary from the directory
 
 #Loads a text list into a dictionary
@@ -12,7 +12,7 @@ import collections
 #@Return: dict --> {dictionary of terms}
 def loadDictionary(dictionary):
     content = ''
-    with open('./dictionaries/' + dictionary + '.txt') as d:
+    with open(os.getcwd() + '/dictionaries/' + dictionary + '.txt') as d:
         content = d.readlines()
     if dictionary == 'obscenities':
         return dict( [(x.strip().split(',')[0], (float(x.strip().split(',')[1]), len(x.strip().split(',')[2]))) for x in content ])
