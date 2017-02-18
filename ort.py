@@ -58,7 +58,6 @@ def obscenityWeight(textList):
     multPerWord = 0;
     obscenityWeight = 0
     amtObscenityWeights = 0
-    print scores
 
     for score in scores:
         obscenityWeight = obscenityWeight + float(score[0])
@@ -94,14 +93,12 @@ def rankText(text, slogans=True, amplifiers=True):
 
     if amplifiers != None:
         aWeights = amplifierWeight(tokens, oWeights[2])
-
-    print aWeights
     print oWeights
+    print aWeights
     print sWeights
+
     contRatio = (sWeights[1] + oWeights[1] + aWeights[1])
-    print contRatio
     contRatio = ((contRatio * contRatio) / math.fabs(contRatio - len(tokens) + 1) + 1)
-    print contRatio
     return math.log(aWeights[0]*oWeights[0]*sWeights[0]*contRatio, 10)
 
 
