@@ -4,25 +4,24 @@
 import re
 import math
 import collections
-import os
 #Loads the obscenity dictionary from the directory
 
 #Loads a text list into a dictionary
 #@Param: A text file of terms
 #@Return: dict --> {dictionary of terms}
-def loadDictionary(dictionary):
+def loadDictionary(path):
     content = ''
-    with open(os.getcwd() + '/dictionaries/' + dictionary + '.txt') as d:
+    with open(path) as d:
         content = d.readlines()
-    if dictionary == 'obscenities':
+    if path.find('obscenities') != -1:
         return dict( [(x.strip().split(',')[0], (float(x.strip().split(',')[1]), len(x.strip().split(',')[2]))) for x in content ])
     else:
         return dict([ tuple(x.strip().split(',')) for x in content ])
 
 #Calls the loadDictionary function to populate the three dictionaries
-obscenities = loadDictionary('obscenities')
-slogans = loadDictionary('slogans')
-amplifiers = loadDictionary('amplifiers')
+#obscenities = loadDictionary('/home/jadixon/Documents/PyORT/dictionaries/obscenities.txt')
+#slogans = loadDictionary('/home/jadixon/Documents/PyORT/dictionaries/slogans.txt')
+#amplifiers = loadDictionary('/home/jadixon/Documents/PyORT/dictionaries/amplifiers.txt')
 
 
 
