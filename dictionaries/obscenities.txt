@@ -9,6 +9,7 @@ ass,50,***
 asshole,90,
 ass-jabber,100,
 assjabber,100,
+bigassed,100,
 assmunch,90,
 ass-pirate,90,
 asspirate,90,
@@ -138,6 +139,7 @@ goatse,100,
 goddamn,20,
 godamn,20,
 gokkun,100,
+damn,10,
 goregasm,100,
 grope,60,*
 g-spot,100,
@@ -187,10 +189,10 @@ nigga,70,
 nigger,100,
 nimphomania,100,
 nymphomaniac,100,
-nipple,60,**
-nipples,60,*
-nude,100,
-nudity,100,
+nipple,60,****
+nipples,60,****
+nude,60,****
+nudity,60,****
 nympho,100,
 nymphomania,100,
 octopussy,100,
@@ -251,6 +253,7 @@ shitblimp,80,
 shitty,80,
 shit,80,
 shitass,90,
+gay,60,****,
 shitless,80,
 shitstain,80,
 nsfw,100,
