@@ -5,7 +5,7 @@ anilingus,100,
 anus,60,*
 apeshit,30,
 arsehole,90,
-ass,50,*
+ass,50,***
 asshole,90,
 ass-jabber,100,
 assjabber,100,
@@ -31,8 +31,8 @@ beaners,70,
 bestiality,60,*
 bimbos,90,
 birdlock,100,
-bitch,90,
-bitches,90,
+bitch,70,
+bitches,70,
 blowjob,100,
 blumpkin,100,
 bollocks,80,
@@ -81,7 +81,7 @@ darkie,70,
 daterape,60,
 deepthroat,100,
 dendrophilia,100,
-dick,60,**
+dick,60,***
 dildo,100,
 dingleberry,100,
 dingleberries,100,
