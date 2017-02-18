@@ -46,7 +46,7 @@ def sloganWeight(text):
 #@Return: Integer --> Number of amplifiers
 def amplifierWeight(textList, multPerWord):
     m = ['multiplier' for token in textList if token in amplifiers.keys()]
-    if len(m) == 0:
+    if len(m) == 0 or multPerWord == 0:
         return (1, 0)
     multipliers = {'multiplier' : m.count(mult) for mult in m}
     return ((multPerWord*10*multipliers['multiplier'])*(multipliers['multiplier'] + 1), multipliers['multiplier'])
@@ -64,7 +64,8 @@ def obscenityWeight(textList):
         obscenityWeight = obscenityWeight + float(score[0])
         multPerWord = multPerWord + score[1]
         amtObscenityWeights = amtObscenityWeights + 1
-
+    if amtObscenityWeights == 0:
+        return (1, 0, 0)
     return (obscenityWeight*(amtObscenityWeights + 1), amtObscenityWeights, multPerWord)
 
 #Normalizes the text by stripping it of any emojis or non-alphanumeric characters
@@ -98,12 +99,16 @@ def rankText(text, slogans=True, amplifiers=True):
     print oWeights
     print sWeights
     contRatio = (sWeights[1] + oWeights[1] + aWeights[1])
-    contRatio = (contRatio * contRatio) / math.fabs(contRatio - len(tokens) + 1)
+    print contRatio
+    contRatio = ((contRatio * contRatio) / math.fabs(contRatio - len(tokens) + 1) + 1)
+    print contRatio
     return math.log(aWeights[0]*oWeights[0]*sWeights[0]*contRatio, 10)
 
 
 
 d = time.time()
+print(rankText('what a splendid day. I can\'t wait to see my love'))
+print('\n')
 #print(rankText('dick ass fuck'))
 #print('\n')
 #print rankText('long dick in my ass fuck')
