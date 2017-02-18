@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
 #A library used to detect obscenity, though in a very minimal and primative manner
-import difflib
 import re
-import time
 import math
 import collections
 
@@ -93,33 +91,7 @@ def rankText(text, slogans=True, amplifiers=True):
 
     if amplifiers != None:
         aWeights = amplifierWeight(tokens, oWeights[2])
-    print oWeights
-    print aWeights
-    print sWeights
 
     contRatio = (sWeights[1] + oWeights[1] + aWeights[1])
     contRatio = ((contRatio * contRatio) / math.fabs(contRatio - len(tokens) + 1) + 1)
     return math.log(aWeights[0]*oWeights[0]*sWeights[0]*contRatio, 10)
-
-
-
-d = time.time()
-print(rankText('what a splendid day. I can\'t wait to see my love'))
-print('\n')
-#print(rankText('dick ass fuck'))
-#print('\n')
-#print rankText('long dick in my ass fuck')
-#print('\n')
-#print(rankText('I\'m so fucking mad right now. I need help'))
-#print('\n')
-#print rankText('sexy little lady, god damn')
-#print('\n')
-print(rankText('fuck the broncos'))
-print('\n')
-print(rankText('Fuck trump man, nigga is gay af'))
-print('\n')
-print(rankText('Nudity is the way to go SON'))
-print('\n')
-#print(rankText('Did you cum in me!? Fuck you did huh you know what FUCK YOU fuck you fuck you, you fucking asshole.'))
-#print('\n')
-print(time.time() - d)
