@@ -14,14 +14,14 @@ print 'Little obscenity: Fuck the broncos'
 print(ort.rankText('Fuck the broncos'))
 print('\n')
 
-print 'Moderate obscenity with meaning: Fuck trump man, nigga is gay af'
+print 'Moderate obscenity with meaning: Fuck trump man, nigga is gay af and can suck a dick '
+print(ort.rankText('Fuck trump man, nigga is gay af and can suck a dick'))
 #print(rankText('dick ass fuck'))
 #print('\n')
 #print rankText('long dick in my ass fuck')
 #print('\n')
 #print rankText('sexy little lady, god damn')
 #print('\n')
-#print(rankText('Fuck trump man, nigga is gay af'))
 #print('\n')
 #print(rankText('Did you cum in me!? Fuck you did huh you know what FUCK YOU fuck you fuck you, you fucking asshole.'))
 #print('\n')
