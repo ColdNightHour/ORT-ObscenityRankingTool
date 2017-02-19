@@ -14,3 +14,5 @@ Using similar words, which involves filtering out the similar words that aren't 
 Using stemming rather than full comparing.
 
 More accurate ranking.
+
+Ranking without stop words, removing stop words from slogans
