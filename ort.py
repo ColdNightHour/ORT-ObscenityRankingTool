@@ -32,9 +32,12 @@ def sloganWeight(text):
 
     for slogan in slogans or slogan.replace(' ','') in text:
         if slogan in text:
-            sloganWeights = sloganWeights + 100
-            contributions = contributions + len(slogan.split(' '))
-            amtSlogans = amtSlogans + 1
+            index = text.find(slogan)
+            actual = text[index:index+len(slogan)+1 if index+len(slogan)+1 <= len(text) else len(text)]
+            if actual == (slogan + ' '):
+                sloganWeights = sloganWeights + 100
+                contributions = contributions + len(slogan.split(' '))
+                amtSlogans = amtSlogans + 1
     return (sloganWeights*amtSlogans + 1, contributions)
 
 #Counts the amount of amplifiers in the text
@@ -88,6 +91,10 @@ def rankText(text, slogans=True, amplifiers=True, externalAffect=False):
 
     contributions = math.pow((sWeights[1] + oWeights[1] + aWeights[1]) + 1, 2)
     nonContributions = len(tokens) - (sWeights[1] + oWeights[1] + aWeights[1]) + 1
+
+    print aWeights
+    print sWeights
+    print oWeights
 
     if nonContributions == 0 or oWeights[0] == 1:
         nonContributions = 1
