@@ -31,7 +31,7 @@ def sloganWeight(text):
     contributions = 0;
 
     for slogan in slogans:
-        if slogan in text:
+        if slogan in text or slogan.replace(' ','') in text:
             sloganWeights = sloganWeights + 100
             contributions = contributions + len(slogan.split(' '))
             amtSlogans = amtSlogans + 1
@@ -72,7 +72,7 @@ def normalize(text):
 #@Param: text to be ranked in obscenity
 #@Return: the ranking in obscenity of the text
 punctuation = ['.', '!', '?', ',', '\'', '\\']
-def rankText(text, slogans=True, amplifiers=True):
+def rankText(text, slogans=True, amplifiers=True, externalAffect=False):
     sWeights = (1,0)
     oWeights = (1,0)
     aWeights = (1,0)
@@ -86,12 +86,12 @@ def rankText(text, slogans=True, amplifiers=True):
     if amplifiers != None:
         aWeights = amplifierWeight(tokens, oWeights[2])
 
-    if oWeights[0] == 1:
-        return 0.0
-
     contributions = math.pow((sWeights[1] + oWeights[1] + aWeights[1]) + 1, 2)
     nonContributions = len(tokens) - (sWeights[1] + oWeights[1] + aWeights[1]) + 1
 
     if nonContributions == 0:
         nonContributions = 1
-    return math.log(aWeights[0]*oWeights[0]*sWeights[0]*contributions*1/nonContributions, 10)
+    if not externalAffect:
+        return math.log(aWeights[0]*oWeights[0]*sWeights[0]*contributions*1/nonContributions, 10)
+    elif externalAffect:
+        return math.log((aWeights[0]*oWeights[0]*sWeights[0]*contributions*1/nonContributions + 1)*100, 10)

@@ -2,20 +2,22 @@ import time
 import ort
 
 d = time.time()
-print 'No obscenity: What a splendid day. I can\'t wait to see my love'
-print(ort.rankText('What a splendid day. I can\'t wait to see my love'))
-print('\n')
+#print 'No obscenity: What a splendid day. I can\'t wait to see my love'
+#print(ort.rankText('What a splendid day. I can\'t wait to see my love'))
+#print('\n')
 
-print 'Little obscenity: I\'m so fucking mad right now. I need help'
-print(ort.rankText('I\'m so fucking mad right now. I need help'))
-print('\n')
+#print 'Little obscenity: I\'m so fucking mad right now. I need help'
+#print(ort.rankText('I\'m so fucking mad right now. I need help'))
+#print('\n')
 
-print 'Little obscenity: Fuck the broncos'
-print(ort.rankText('Fuck the broncos'))
-print('\n')
+#print 'Little obscenity: Fuck the broncos'
+#print(ort.rankText('Fuck the broncos'))
+#print('\n')
 
-print 'Moderate obscenity with meaning: Fuck trump man, nigga is gay af and can suck a dick '
-print(ort.rankText('Fuck trump man, nigga is gay af and can suck a dick'))
+#print 'Moderate obscenity with meaning: Fuck trump man, nigga is gay af and can suck a dick '
+#print(ort.rankText('Fuck trump man, nigga is gay af and can suck a dick'))
+
+print ort.rankText('suck it!!!')
 #print(rankText('dick ass fuck'))
 #print('\n')
 #print rankText('long dick in my ass fuck')
