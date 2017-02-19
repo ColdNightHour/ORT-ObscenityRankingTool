@@ -3,11 +3,11 @@ import ort
 
 d = time.time()
 #print 'No obscenity: What a splendid day. I can\'t wait to see my love'
-#print(ort.rankText('What a splendid day. I can\'t wait to see my love'))
+print(ort.rankText('What a splendid day. I can\'t wait to see my love'))
 #print('\n')
 
 #print 'Little obscenity: I\'m so fucking mad right now. I need help'
-#print(ort.rankText('I\'m so fucking mad right now. I need help'))
+print(ort.rankText('I\'m so fucking mad right now. I need help'))
 #print('\n')
 
 #print 'Little obscenity: Fuck the broncos'

@@ -30,8 +30,8 @@ def sloganWeight(text):
     amtSlogans = 0
     contributions = 0;
 
-    for slogan in slogans:
-        if slogan in text or slogan.replace(' ','') in text:
+    for slogan in slogans or slogan.replace(' ','') in text:
+        if slogan in text:
             sloganWeights = sloganWeights + 100
             contributions = contributions + len(slogan.split(' '))
             amtSlogans = amtSlogans + 1
@@ -89,7 +89,7 @@ def rankText(text, slogans=True, amplifiers=True, externalAffect=False):
     contributions = math.pow((sWeights[1] + oWeights[1] + aWeights[1]) + 1, 2)
     nonContributions = len(tokens) - (sWeights[1] + oWeights[1] + aWeights[1]) + 1
 
-    if nonContributions == 0:
+    if nonContributions == 0 or oWeights[0] == 1:
         nonContributions = 1
     if not externalAffect:
         return math.log(aWeights[0]*oWeights[0]*sWeights[0]*contributions*1/nonContributions, 10)
