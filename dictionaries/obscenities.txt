@@ -39,7 +39,7 @@ blumpkin,100,
 bollocks,80,
 bondage,60,****
 boner,100,
-boob,90,
+boob,50,*****
 boobs,100,
 boobie,100,
 boobies,100,
@@ -169,6 +169,7 @@ kinbaku,100,
 kinkster,100,
 kinky,100,
 knobbing,100,
+nob,100,
 load,10,*********
 lolita,100,
 lollita,100,
