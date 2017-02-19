@@ -16,3 +16,5 @@ Using stemming rather than full comparing.
 More accurate ranking.
 
 Ranking without stop words, removing stop words from slogans
+
+DetectObscenitiesInHashtags
