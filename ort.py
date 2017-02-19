@@ -92,9 +92,9 @@ def rankText(text, slogans=True, amplifiers=True, externalAffect=False):
     contributions = math.pow((sWeights[1] + oWeights[1] + aWeights[1]) + 1, 2)
     nonContributions = len(tokens) - (sWeights[1] + oWeights[1] + aWeights[1]) + 1
 
-    print aWeights
-    print sWeights
-    print oWeights
+    #print aWeights
+    #print sWeights
+    #print oWeights
 
     if nonContributions == 0 or oWeights[0] == 1:
         nonContributions = 1
