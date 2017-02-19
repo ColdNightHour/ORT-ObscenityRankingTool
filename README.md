@@ -5,3 +5,12 @@ PyORT (Python Obscenity Ranking Tool) is a program that ranks text inputs or fil
 
 ##How it works
 Obscenity rankings are based on three distinct criteria, slogans, obscene words, and amplifiers.
+
+##Future functionality
+Sweeping datasets to learn new obscene words, slogans, and amplifiers
+
+Using similar words, which involves filtering out the similar words that aren't connected to an obscene word.
+
+Using stemming rather than full comparing.
+
+More accurate ranking.
