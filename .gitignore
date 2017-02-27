@@ -89,3 +89,5 @@ ENV/
 .ropeproject
 
 examples.txt
+filteredTweets.txt
+SelectiveAspects.txt
