@@ -112,4 +112,4 @@ def rankDocument(document):
         if score != 0.0:
             relativeObscenity.append(score)
         globalObscenity.append(score)
-    return (sum(globalObscenity)/len(globalObscenity), sum(relativeObscenity)/len(relativeObscenity))
+    return (sum(globalObscenity)/(len(globalObscenity) + 1), sum(relativeObscenity)/(len(relativeObscenity) + 1))
