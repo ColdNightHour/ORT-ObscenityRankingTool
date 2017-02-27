@@ -17,7 +17,7 @@ d = time.time()
 #print 'Moderate obscenity with meaning: Fuck trump man, nigga is gay af and can suck a dick '
 #print(ort.rankText('Fuck trump man, nigga is gay af and can suck a dick'))
 
-print ort.rankText('Want to work in #Mashpee, MA? View our latest opening: https://t.co/VaYEXSHJMZ #Job #Retail #Jobs #Hiring #CareerArc')
+print ort.rankDocument('Want to work in #Mashpee, MA? View our latest opening: https://t.co/VaYEXSHJMZ #Job #Retail #Jobs #Hiring #CareerArc\n I will fuck your ass')
 #print(rankText('dick ass fuck'))
 #print('\n')
 #print rankText('long dick in my ass fuck')

@@ -75,7 +75,7 @@ def normalize(text):
 #@Param: text to be ranked in obscenity
 #@Return: the ranking in obscenity of the text
 punctuation = ['.', '!', '?', ',', '\'', '\\']
-def rankText(text, slogans=True, amplifiers=True, externalAffect=False):
+def rankLineText(text, slogans=True, amplifiers=True, externalAffect=False):
     sWeights = (1,0)
     oWeights = (1,0)
     aWeights = (1,0)
@@ -102,3 +102,14 @@ def rankText(text, slogans=True, amplifiers=True, externalAffect=False):
         return math.log(aWeights[0]*oWeights[0]*sWeights[0]*contributions*1/nonContributions, 10)
     elif externalAffect:
         return math.log((aWeights[0]*oWeights[0]*sWeights[0]*contributions*1/nonContributions + 1)*100, 10)
+
+def rankDocument(document):
+    documentSplit = document.split('\n')
+    globalObscenity = []
+    relativeObscenity = []
+    for document in documentSplit:
+        score = rankLineText(document)
+        if score != 0.0:
+            relativeObscenity.append(score)
+        globalObscenity.append(score)
+    return (sum(globalObscenity)/len(globalObscenity), sum(relativeObscenity)/len(relativeObscenity))
